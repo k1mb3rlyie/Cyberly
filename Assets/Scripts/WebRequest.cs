@@ -1,4 +1,4 @@
-using MySql.Data.MySqlClient;  // Ensure MySql.Data is installed
+using MySql.Data.MySqlClient; 
 using System;
 using UnityEngine;
 
@@ -19,16 +19,15 @@ public class DatabaseManager : MonoBehaviour
                                 (f_name, m_name, l_name, user_name, dob, email, u_password, score)
                                 VALUES (@f_name, @m_name, @l_name, @user_name, @dob, @email, @u_password, @score);";
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlCommand cmd = new MySqlCommand(query, conn)
 
-                // Using parameters to prevent SQL injection
                 cmd.Parameters.AddWithValue("@f_name", fName);
                 cmd.Parameters.AddWithValue("@m_name", mName);
                 cmd.Parameters.AddWithValue("@l_name", lName);
                 cmd.Parameters.AddWithValue("@user_name", userName);
                 cmd.Parameters.AddWithValue("@dob", dob);  // Format: yyyy-MM-dd
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@u_password", password);  // In practice, hash passwords before storing
+                cmd.Parameters.AddWithValue("@u_password", password);  // In practice, hash passwords before storing, ill have to learn that too
                 cmd.Parameters.AddWithValue("@score", score);
 
                 cmd.ExecuteNonQuery();
