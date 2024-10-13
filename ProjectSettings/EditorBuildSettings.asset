@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 8559575a9afb51146a319fea0e3b4a05
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 04da9fce03407374987ffcf7a03c79b6
+  - enabled: 1
+    path: Assets/Scenes/App Content/Lessons/Lesson1.unity
+    guid: 42cc0486a13ca9b418531b3c3bc6eba9
+  - enabled: 1
+    path: Assets/Scenes/App Content/Lessons/Lesson2.unity
+    guid: 45a4af9b2702f7144b9f689db2efc606
+  - enabled: 1
+    path: Assets/Scenes/App Content/Lessons/Lesson3.unity
+    guid: 51f9f1684012b244cbc49bdfb3643ad7
+  - enabled: 1
+    path: Assets/Scenes/App Content/Lessons/Lesson4.unity
+    guid: d7fe0c7999d2a154d95467e5e192732a
+  - enabled: 1
+    path: Assets/Scenes/App Content/Lessons/Lesson5.unity
+    guid: 9d3cdaf51dc12c24eb82a24d47a56435
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Multiple Choices/Quiz 1.unity
+    guid: bab990ff53a167e4ba245b98006d809a
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Multiple Choices/Quiz 2.unity
+    guid: db34d87347227e84abd855b332eeac95
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Multiple Choices/Quiz 3.unity
+    guid: b0560d4175b13be478683321ca03fd88
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Multiple Choices/Quiz 4.unity
+    guid: 49f62ea04b359884e83c1b1b432d8f88
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Multiple Choices/Quiz 5.unity
+    guid: c243979d95ca09849b9a1e1e70dd2a25
+  - enabled: 1
+    path: Assets/Scenes/Achievments.unity
+    guid: d75f17844c41c4e4ca5ee8db613551e1
+  - enabled: 1
+    path: Assets/Scenes/Progression.unity
+    guid: 26f59502017567a4b99717659dd46ea3
+  - enabled: 0
+    path: Assets/Scenes/Result.unity
+    guid: 4a88b8c7f68590541a97a908b63e9088
+  - enabled: 0
+    path: Assets/Scenes/Settings.unity
+    guid: 56a9bc232483a32478576dc0ec5ead12
+  - enabled: 1
+    path: Assets/Scenes/App Content/Quizzes/Essay writing/EssayQuizzes.unity
+    guid: cafa7a53f9210f945be424eed516a6a9
+  m_configObjects: {}
