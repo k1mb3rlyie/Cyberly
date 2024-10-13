@@ -10,8 +10,7 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
-# I'd like for my PHP files to be left out of it
-*.php
+# I'd like for my PHP files to be left out of it ...
 
 
 # MemoryCaptures can get excessive in size.
