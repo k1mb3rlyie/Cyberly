@@ -1,10 +1,10 @@
-using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient; // this has refused to work up till now
 using System;
 using UnityEngine;
 
 public class DatabaseManager : MonoBehaviour
 {
-    private string connectionString = "Server=localhost;Database=cyberly_database;Uid=root;Pwd=your_password;"; // Modify with your credentials
+    private string connectionString = "Server=localhost;Database=cyberly_database;Uid=root;Pwd=your_password;"; // Modify with your credentials im not usre of this code yet,, we will study more
 
 
     // Method to insert a user into the existing table I might change this soon
