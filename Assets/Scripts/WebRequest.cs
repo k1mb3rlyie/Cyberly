@@ -19,7 +19,7 @@ public class DatabaseManager : MonoBehaviour
                                 (f_name, m_name, l_name, user_name, dob, email, u_password, score)
                                 VALUES (@f_name, @m_name, @l_name, @user_name, @dob, @email, @u_password, @score);";
 
-                MySqlCommand cmd = new MySqlCommand(query, conn)
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@f_name", fName);
                 cmd.Parameters.AddWithValue("@m_name", mName);
