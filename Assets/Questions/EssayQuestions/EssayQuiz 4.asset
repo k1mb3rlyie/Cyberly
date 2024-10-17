@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4f53ba28d4c474aaedaaab7b3a5b02, type: 3}
+  m_Name: EssayQuiz 4
+  m_EditorClassIdentifier: 
+  essayQuestions: Social engineering is a significant cybersecurity threat because
+    it targets human behavior. Discuss three specific social engineering tactics,
+    providing examples of how they might be used to manipulate individuals or organizations
+    into revealing sensitive information. How can cybersecurity training mitigate
+    these threats?
