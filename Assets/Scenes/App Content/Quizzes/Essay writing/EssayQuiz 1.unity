@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 621211086}
   - component: {fileID: 621211085}
   m_Layer: 5
-  m_Name: InputField (Legacy)
+  m_Name: EssayQuestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

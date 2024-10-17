@@ -5,26 +5,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EssayLogic : MonoBehaviour
+[System.Serializable]
+[CreateAssetMenu(fileName = "EssayQuiz", menuName = "Essays/Essay")] //love this method
+
+public class EssayQuestion : ScriptableObject // cant use input field i have to use monobehaviour for that refer to this in the EssayGenerator script 
 {
-    public EssayQuestionGenerator essayQuestions; //reference to tihs script E\
-    public InputField userInputField;
-    public Text feedbackText;
+    public string essayQuestions; //reference to tihs script E\
 
-    public void CheckAnswer()
-    {
-        string userInput = userInputField.text;
-        bool isCorrect = essayQuestions.IsAnswerCorrect(userInput);
-
-
-        if (isCorrect)
-        {
-            feedbackText.text = "Correct!!!";
-        }
-
-        else
-        {
-            feedbackText.text = "Incorrect. Try again";
-        }
-    }
 }
