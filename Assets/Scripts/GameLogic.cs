@@ -76,9 +76,9 @@ public class GameLogic : MonoBehaviour
         GameOverPanel.SetActive(true);
         float PercentageScore = (Score / (float)TotalQuestions) * 100;
         ScoreTxt.text = PercentageScore.ToString() + "%";// BETTER COME BACK AND WRITE THE MATH TO SOLVE THIS GIRL.
-                                                         // YOU DECIDED TO MAKE IT IN PERCENTAGE BECAUSE YOU DONT
+                                                       // YOU DECIDED TO MAKE IT IN PERCENTAGE BECAUSE YOU DONT
                                                          // WANT TO HAVE AN EASY LIFE!
-        /*DONE!*/
+                    /*DONE!*/
 
                     //NOW TO GRADE IT CAUSE WHY NOT? MAKE IT MORE COMPLEX WHY DON'T YOU! 
         string LetterGrade = "";

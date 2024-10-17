@@ -28,7 +28,7 @@ public class EssayQuestionGenerator : MonoBehaviour
 
         string userAnswer = UserInput.text; //i will refer to this in the script that will collect the ansers for NLP assessment
         GameOverPanel.SetActive(true);
-        EssayPanel.SetActive(false);
+        EssayPanel.SetActive(false); //this shit didnt work once, but we thank God praise be!!!
 
 
     }
