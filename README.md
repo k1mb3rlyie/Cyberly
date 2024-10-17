@@ -21,7 +21,12 @@ I'll upload when most of the game has been realized
 - **PHP and MySQL** (for the backend)
 - **SpaCy** (for NLP processing)
 
-  ## Project Structure
+## Languages
+- **C#** Main language used for most Unity projects
+- **PHP and SQL** PHP used to collect information in the backend and SQL used to design the structure for the database
+- **Pyhton** used to design NLP processing
+
+## Project Structure
 - `Assets/`: Contains Unity assets, scripts, scenes, images and other media assets used in the game.
 - `Scripts/`: Contains all C# scripts used in the game logic.
 - `Backend/`: PHP scripts and SQL files for handling the database.
