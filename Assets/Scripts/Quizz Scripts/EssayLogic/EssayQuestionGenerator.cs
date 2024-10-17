@@ -12,10 +12,14 @@ public class EssayQuestionGenerator : MonoBehaviour
     public InputField UserInput; // The correct input for the essay
     public Text questionText;
 
+    public GameObject EssayPanel;
+    public GameObject GameOverPanel;
+
     void Start()
     {
         questionText.text = question.essayQuestions;
-
+        EssayPanel.SetActive(true);
+        GameOverPanel.SetActive(false);
 
     }
 
@@ -23,7 +27,8 @@ public class EssayQuestionGenerator : MonoBehaviour
     {
 
         string userAnswer = UserInput.text; //i will refer to this in the script that will collect the ansers for NLP assessment
-
+        GameOverPanel.SetActive(true);
+        EssayPanel.SetActive(false);
 
 
     }
