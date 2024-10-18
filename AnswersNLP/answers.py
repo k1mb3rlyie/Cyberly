@@ -2,14 +2,17 @@ import spacy
 import re
 from transformers import pipeline
 
+# from sklearn.feature_extraction.#text import CountVectorizer
+
+
 # Load spaCy model
 nlp = spacy.load("en_core_web_sm")
 
-# Read answers from file
-with open("answers.txt", "r") as file:
-    answers = file.readlines()
 
-# Clean answers by removing punctuation
+with open("answers.txt", "r") as file:
+    answers = file.readlines()  # fFILE
+
+# removing punctuation first
 cleaned_answers = [
     re.sub(r"[^\w\s]", "", answer.strip()) for answer in answers if answer.strip()
 ]
@@ -17,7 +20,6 @@ cleaned_answers = [
 # Tokenize answers
 tokenized_answers = [nlp(answer) for answer in cleaned_answers]
 
-# Print tokenized answers to check
 for i, answer in enumerate(tokenized_answers):
     print(f"Answer {i + 1}: {[token.text for token in answer]}")
 
@@ -29,20 +31,24 @@ with open("tokenized_answers.txt", "w") as f:
 
 print("Tokenized answers saved to tokenized_answers.txt")
 
-# Load the summarization pipeline
-summarizer = pipeline("summarization", model="t5-small")
+# fir summaries
 
-# Summarize each answer individually and save to a file
+summarizer = pipeline(
+    "summarization", model="t5-small"
+)  # Load the summarization pipeline
+
+# each answer individually and save to a file
 summaries = []
 
+
 for i, answer in enumerate(cleaned_answers):
-    if len(answer.split()) < 5:  # Skip very short answers
+    if len(answer.split()) < 2:  # Skip very short answers for functionality
         print(f"Answer {i + 1} is too short for summarization: {answer}")
         summaries.append("Too short to summarize.")
         continue
 
     # Summarize the answer
-    summary = summarizer(answer, max_length=70, min_length=50, do_sample=False)[0][
+    summary = summarizer(answer, max_length=100, min_length=100, do_sample=False)[0][
         "summary_text"
     ]
     summaries.append(summary)
@@ -55,4 +61,4 @@ with open("summarized_answers.txt", "w") as file:
     for i, summary in enumerate(summaries):
         file.write(f"Summary {i + 1}: {summary}\n")
 
-print("Summaries saved to summarized_answers.txt")
+print("Summaries saved to file summarized_answers.txt")
