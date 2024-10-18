@@ -1,6 +1,6 @@
 # Cyberly
 
-***Cyberly*** is an educational game designed to teach players about cybersecurity concepts through the use of lessons and quizzes. While players navigate through various lessons they learning essential concepts that will enhancde their cybersecurity skills. The main Aim of this project is exploring the use of NLPs in the assessement of student essay responses. It also expands upon the many uses of the Unity Game Engine beyond game development
+***Cyberly*** is an educational game designed to teach players about cybersecurity concepts through the use of lessons and quizzes. While players navigate through various lessons they learn concepts essential in the  woorld of cybersecurity. The main Aim of this project is exploring the use of NLPs in the assessement of student essay responses. It also expands upon the many uses of the Unity Game Engine beyond game development
  <br>
 
 ## Features
