@@ -32,7 +32,7 @@ for i, answer in enumerate(tokenized_answers):
     print(f"Answer {i + 1}: {[token.text for token in answer]}")
 
 # Write tokenized answers to a file
-with open("tokenized_answers.txt", "w") as f:
+with open("tokenized_answers.txt", "w", encoding="utf-8") as f:
     for answer in tokenized_answers:
         tokens = [token.text for token in answer]
         f.write(" ".join(tokens) + "\n")
@@ -48,13 +48,13 @@ summaries = []
 
 
 for i, answer in enumerate(cleaned_answers):
-    if len(answer.split()) < 0:  # Skip very short answers for functionality
+    if len(answer.split()) == 0:  # Skip very short answers for functionality
         print(f"Answer {i + 1} is too short for summarization: {answer}")
         summaries.append("Too short to summarize.")
         continue
 
     # Summarize the answer
-    summary = summarizer(answer, max_length=100, min_length=100, do_sample=False)[0][
+    summary = summarizer(answer, max_length=100, min_length=50, do_sample=False)[0][
         "summary_text"
     ]
     summaries.append(summary)
@@ -63,7 +63,7 @@ for i, answer in enumerate(cleaned_answers):
     print(f"Summary for Answer {i + 1}: {summary}")
 
 # Save all summaries to a file
-with open("summarized_answers.txt", "w") as file:
+with open("summarized_answers.txt", "w", encoding="utf-8") as file:
     for i, summary in enumerate(summaries):
         file.write(f"Summary {i + 1}: {summary}\n")
 
@@ -81,7 +81,7 @@ def bag_of_words(corpus):
     return x.toarray(), vectorizer.get_feature_names_out()
 
 
-with open("answers.txt", r) as file:
+with open("answers.txt", "r") as file:
     text_corpus = file.readlines()
 
 
@@ -89,9 +89,9 @@ bow_features, bow_feature_names = bag_of_words(text_corpus)
 print(bow_features)
 print(bow_feature_names)
 
-with open("BoW.txt", "w") as file:
+with open("BoW.txt", "w", encoding="utf-8") as file:
     for i, bow in enumerate(bow_feature_names):
-        file.write(f"{i + 1}: \n")  # save as a file
+        file.write(f"{i + 1}: {bow} \n")  # save as a file
 
 
 ##
@@ -104,13 +104,13 @@ def tfidf_vectorization(corpus):
     return x.toarray(), vectorizer.get_feature_names_out()
 
 
-tfidf_features, tfidf_feature_names = tfidf_vectorization(text_corpus)
+tfidf_features, tfidf_feature_names = tfidf_vectorization(cleaned_answers)
 print(tfidf_features)
 print(tfidf_feature_names)
 
-with open("TFIDFreq.txt", "w") as file:
-    for i, bow in enumerate(tfidf_eature_names):
-        file.write(f"{i + 1}: \n")
+with open("TFIDFreq.txt", "w", encoding="utf-8") as file:
+    for i, tfidf in enumerate(tfidf_feature_names):
+        file.write(f"{i + 1}: {tfidf} \n")
 
 
 #
@@ -121,7 +121,8 @@ def sentence_embeddings(sentences):
     return embeddings
 
 
-embeddings = sentence_embeddings(text_corpus)
-print(embeddings)
-
+embeddings = sentence_embeddings(cleaned_answers)
 np.savetxt("embeddings.txt", embeddings)
+
+
+print("processing complete")
