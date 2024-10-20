@@ -11,12 +11,17 @@ public class MainMenuManager : MonoBehaviour
     public GameObject SettingsPanel;
     public GameObject MainMenuPanel;
     public GameObject AchievementsPnl;
+    public GameObject User;
+    public GameObject LeaderB;
 
     // Start is called before the first frame update
     void Start()
     {
         SettingsPanel.SetActive(false);
         AchievementsPnl.SetActive(false);
+        User.SetActive(false);
+        LeaderB.SetActive(false);
+
     }
 
     public void LoadSetting()
@@ -28,6 +33,17 @@ public class MainMenuManager : MonoBehaviour
     public void AchieveBaby()
     {
         AchievementsPnl.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+
+    public void UserBaby()
+    {
+        User.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+    public void LeaderBaby()
+    {
+        LeaderB.SetActive(true);
         MainMenuPanel.SetActive(false);
     }
     public void LoadMenu()
