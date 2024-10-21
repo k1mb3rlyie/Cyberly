@@ -28,8 +28,9 @@ I'll upload when most of the game has been realized
 
 ## Project Structure
 - `Assets/`: Contains Unity assets, scripts, scenes, images and other media assets used in the game.
-- `Scripts/`: Contains all C# scripts used in the game logic.
-- `Backend/`: PHP scripts and SQL files for handling the database.
+- `Assets/Scripts/`: Contains all C# scripts used in the game logic.
+- `AnswersNLP/`: Contains python files used in training AI model
+- `Backend/`: Contains PHP scripts files handling the database.
 
 ## License
 Cyberly © 2024 by Kimberly "Kimkim" Tip'an Dawap is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/). You are free to use, share, and adapt the work non-commercially, with proper attribution to moi.
