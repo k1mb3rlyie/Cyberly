@@ -1,7 +1,7 @@
 <?php
 //i'm not sure i spelt achievemnts the right way achievemnts i dont think i know how to
 
-require 'db_connect.php';
+require_once 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Retrieve user_id

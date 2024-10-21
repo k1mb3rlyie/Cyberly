@@ -1,6 +1,6 @@
 <?php
 //php logic to save the users score, i will probably add one that takes the frequency of a score and stores it
-require 'db_connect.php';
+require_once 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // retrieve input values SQL

@@ -1,15 +1,15 @@
 <?php
 
-require 'db_connect.php';
+require_once 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $email = $_POST['email'];
+    $login_identifier = $_POST['login_identifier']; // using cause i want user to be able to use either email or username
     $password = $_POST['password'];     // Retrieve email and password from POST request the proper method
 
-    // Query the user by email
-    $stmt = $conn->prepare("SELECT * FROM user_info WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    // Query the user by email or username
+    $stmt = $conn->prepare("SELECT * FROM user_info WHERE email = ? OR user_name = ?");
+    $stmt->bind_param("ss", $login_identifier, $login_identifier);
     $stmt->execute();
     $result = $stmt->get_result();
 
