@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
 using TMPro;
+using System;
 
 public class SQLLogin : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class SQLLogin : MonoBehaviour
     [SerializeField] InputField password;
     [SerializeField] TMP_InputField DOB;
 
-    public void OnSubmit()
+    public async void OnSubmit()
     {
         //if (string.IsNullOrWhiteSpace(f_name.text, l_name.text, user_name.text, email.text, password.text, birthday.text) // oveload apparently cant take six arguments
         //{
@@ -60,13 +61,23 @@ public class SQLLogin : MonoBehaviour
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(DOB.text) || DOB.text.Length < 6) // oveload apparently cant take six arguments
+        if (!DateTime.TryParse(DOB.text, out DateTime dob)) // oveload apparently cant take six arguments
         {
-            Debug.Log("Empty string or imput is not long enough or is whitespace!! fill in the blank joor")
+            Debug.Log("Not a date");
 
             return;
         }
 
-        SQLManager.NewUserReg(f_name.text, l_name.text, user_name.text, email.text, password.text, DOB.text);
+        bool isSuccess = await SQLManager.NewUserReg(f_name.text, l_name.text, user_name.text, email.text, password.text, dob);
+
+        if (isSuccess)
+        {
+            Debug.Log("User registered successfully!");
+        }
+        else
+        {
+            Debug.Log("Registration failed. Please try again.");
+        }
+
     }
 }

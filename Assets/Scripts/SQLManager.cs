@@ -22,7 +22,7 @@ public class SQLManager : MonoBehaviour
             { "dob", DOB.ToString("yyyy-MM-dd") }
         };
 
-        return await SendPostRequest(REGISTER_USER_URL, new );
+        return await SendPostRequest(REGISTER_USER_URL, parameters);
     }
 
     static async Task<bool> SendPostRequest(string url, Dictionary<string, string> parameters)
@@ -34,14 +34,18 @@ public class SQLManager : MonoBehaviour
             while (!req.isDone) await Task.Delay(100);
 
             // Checking for errors
-            if (req.error != null || !string.IsNullOrWhiteSpace(req.error) || HasErrorMessage(req.downloadHandler.text))
+            if (req.result != UnityWebRequest.Result.Success || HasErrorMessage(req.downloadHandler.text))
+            {
+                Debug.LogError($"Request Failed: {req.error}");
                 return false;
+            }
+               
 
             return true; // Return true if no errors
         }
     }
 
-    static bool HasErrorMessage(string msg) => int.TryParse(msg, out var res);
+    static bool HasErrorMessage(string msg) => !int.TryParse(msg, out var res);
 
     // Optionally define HasErrorMessage() here if needed
 
