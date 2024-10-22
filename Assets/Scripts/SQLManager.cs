@@ -8,14 +8,14 @@ using UnityEngine.Networking;
 public class SQLManager : MonoBehaviour
 {
     readonly static string SERVER_URL = "localhost:80/CyberlyBackend/Cyberly";
-    public static async Task<bool> NewUserReg(string f_name, string lname, string user_name, string password, string email, DateTime DOB)
+    public static async Task<bool> NewUserReg(string f_name, string l_name, string user_name, string password, string email, DateTime DOB) //NewUserReg
     {
         string REGISTER_USER_URL = $"{SERVER_URL}/register.php";
 
         var parameters = new Dictionary<string, string>
         {
             { "f_name", f_name },
-            { "l_name", lname },
+            { "l_name", l_name },
             { "user_name", user_name },
             { "password", password },
             { "email", email },
