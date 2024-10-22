@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 public class SQLManager : MonoBehaviour
 {
-    readonly static string SERVER_URL = "localhost:80/CyberlyBackend/Cyberly";
+    readonly static string SERVER_URL = "http://localhost:80/CyberlyBackend/Cyberly";
     public static async Task<bool> NewUserReg(string f_name, string l_name, string user_name, string password, string email, DateTime DOB) //NewUserReg
     {
         string REGISTER_USER_URL = $"{SERVER_URL}/register.php";

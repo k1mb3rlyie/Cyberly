@@ -60,8 +60,15 @@ public class SQLLogin : MonoBehaviour
 
             return;
         }
+        
+        if (string.IsNullOrWhiteSpace(dob.text))
+        {
+            Debug.Log("Not Valid");
+            return;
+        }
 
-        if (!DateTime.TryParse(DOB.text, out DateTime dob)) // oveload apparently cant take six arguments
+        DateTime dob;
+        if (DateTime.TryParse(dob.text, out DateTime DOB)) // oveload apparently cant take six arguments
         {
             Debug.Log("Not a date");
 
