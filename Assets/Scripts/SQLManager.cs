@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -8,7 +10,7 @@ public class SQLManager : MonoBehaviour
 {
     readonly static string SERVER_URL = "http://localhost:80/CyberlyBackend/Backend/";
 
-    public void NewUserReg(string f_name, string l_name, string user_name, string password, string email, DateTime DOB)
+    public IEnumerator NewUserReg(string f_name, string l_name, string user_name, string email,  string password, DateTime DOB) //order in the UI
     {
         string REGISTER_USER_URL = $"{SERVER_URL}/register.php";
 
@@ -17,19 +19,34 @@ public class SQLManager : MonoBehaviour
             { "f_name", f_name },
             { "l_name", l_name },
             { "user_name", user_name },
-            { "password", password },
             { "email", email },
-            { "dob", DOB.ToString("yyyy-MM-dd") }
+            { "password", password },
+            { "DOB", DOB.ToString("yyyy-MM-dd") }
+
+
         };
 
-        StartCoroutine(SendPostRequest(REGISTER_USER_URL, parameters));
+        foreach (var param in parameters)
+        {
+            Debug.Log($"{param.Key}: {param.Value}");
+        }
+
+        // Log the complete URL request
+        Debug.Log($"Sending POST request to: {REGISTER_USER_URL}");
+
+
+        yield return StartCoroutine(SendPostRequest(REGISTER_USER_URL, parameters));
     }
 
-    IEnumerator SendPostRequest(string url, Dictionary<string, string> parameters)
+
+
+    private IEnumerator SendPostRequest(string url, Dictionary<string, string> parameters)
     {
         using (UnityWebRequest req = UnityWebRequest.Post(url, parameters))
         {
-            yield return req.SendWebRequest(); // Correct 'yield'
+            req.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            yield return req.SendWebRequest(); // Correct 'yield' must stop spelling it as yeild
 
             if (req.result != UnityWebRequest.Result.Success || HasErrorMessage(req.downloadHandler.text))
             {
@@ -43,7 +60,7 @@ public class SQLManager : MonoBehaviour
         }
     }
 
-    static bool HasErrorMessage(string msg)
+    private static bool HasErrorMessage(string msg)
     {
         // Custom error message checking logic
         return msg.Contains("error") || msg.Contains("fail");
@@ -54,8 +71,8 @@ public class SQLManager : MonoBehaviour
         public string f_name;
         public string l_name;
         public string user_name;
-        public string password;
         public string email;
+        public string password;
         public DateTime DOB;
     }
 }

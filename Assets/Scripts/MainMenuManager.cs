@@ -6,6 +6,9 @@ using TMPro;
 
 
 //script for managing 
+
+
+
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject SettingsPanel;
@@ -14,19 +17,20 @@ public class MainMenuManager : MonoBehaviour
     public GameObject RegUser;
     public GameObject LeaderB;
     public GameObject LoginUser; 
+    public GameObject SignInPage;// the more panels i add the more complex this all gets
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        MainMenuPanel.SetActive(true);
-        SettingsPanel.SetActive(false);
-        AchievementsPnl.SetActive(false);
-        RegUser.SetActive(false);
+        MainMenuPanel.SetActive(true); //main menu start of the scene
+        SettingsPanel.SetActive(false); //settings
+        AchievementsPnl.SetActive(false); //achievements
+        RegUser.SetActive(false); 
         LoginUser.SetActive(false);
         LeaderB.SetActive(false);
-
+        SignInPage.SetActive(false);
     }
 
     public void LoadSetting()
@@ -41,21 +45,29 @@ public class MainMenuManager : MonoBehaviour
         MainMenuPanel.SetActive(false);
     }
 
-    public void UserBaby()
+    public void NewUserBaby() //function in the signin/signup page to take you to user user registtration
     {
+        SignInPage.SetActive(false);
         RegUser.SetActive(true);
-        MainMenuPanel.SetActive(false);
+        //MainMenuPanel.SetActive(false); keep this for now
     }
    
-    public void LoginYeah()
+    public void OldUserYeah()
     {
+        SignInPage.SetActive(false);
         LoginUser.SetActive(true);
+        //MainMenuPanel.SetActive(false); will already be disabled?
+    }
+
+    public void User()  //function to open up the signin/signup page user management
+    {
+        SignInPage.SetActive(true);
         MainMenuPanel.SetActive(false);
     }
     public void LeaderBaby()
     {
         LeaderB.SetActive(true);
-        MainMenuPanel.SetActive(false);
+        MainMenuPanel.SetActive(false); //mwahahahahaahha. nothing cant be solved with patience!!!!!!!!!!!!!!!!!1
     }
 
 
