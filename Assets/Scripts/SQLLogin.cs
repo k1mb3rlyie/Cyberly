@@ -18,60 +18,46 @@ public class SQLLogin : MonoBehaviour
 
     public async void OnSubmit()
     {
-        //if (string.IsNullOrWhiteSpace(f_name.text, l_name.text, user_name.text, email.text, password.text, birthday.text) // oveload apparently cant take six arguments
-        //{
-        //    Debug.Log("Empty string or imput is whitespace!! fill in the blank joor");
-
-        //    return;
-        //}
-
         if (string.IsNullOrWhiteSpace(f_name.text) || f_name.text.Length < 3)
         {
-            Debug.Log("Empty string or imput is not long enough or is whitespace!! fill in the blank joor");
-
+            Debug.Log("Invalid first name");
             return;
         }
 
         if (string.IsNullOrWhiteSpace(l_name.text) || l_name.text.Length < 3)
         {
-            Debug.Log("Empty string or imput is not long enough or is whitespace!! fill in the blank joor");
-
+            Debug.Log("Invalid last name");
             return;
         }
 
         if (string.IsNullOrWhiteSpace(user_name.text) || user_name.text.Length < 7)
         {
-            Debug.Log("Empty string or imput is not long enough or is whitespace!! fill in the blank joor");
-
+            Debug.Log("Username must be a string and more than 6 characters");
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(email.text) || email.text.Length < 4) // oveload apparently cant take six arguments
+        if (string.IsNullOrWhiteSpace(email.text) || email.text.Length < 4)
         {
-            Debug.Log("Empty string or imput is whitespace!! fill in the blank joor");
-
+            Debug.Log("Invalid Email address");
             return;
         }
 
         if (string.IsNullOrWhiteSpace(password.text) || password.text.Length < 5)
         {
-
-            Debug.Log("Empty string or imput is not long enough or is whitespace!! fill in the blank joor");
-
+            Debug.Log("Empty string or input is not long enough or is whitespace!! fill in the blank joor");
             return;
         }
-        
-        if (string.IsNullOrWhiteSpace(dob.text))
+
+        if (string.IsNullOrWhiteSpace(DOB.text))
         {
-            Debug.Log("Not Valid");
+            Debug.Log("Date of Birth field is empty or whitespace!");
             return;
         }
 
         DateTime dob;
-        if (DateTime.TryParse(dob.text, out DateTime DOB)) // oveload apparently cant take six arguments
+        if (!DateTime.TryParse(DOB.text, out dob))
         {
-            Debug.Log("Not a date");
-
+            Debug.Log("Not a valid date format!");
             return;
         }
 
@@ -85,6 +71,6 @@ public class SQLLogin : MonoBehaviour
         {
             Debug.Log("Registration failed. Please try again.");
         }
-
     }
+
 }

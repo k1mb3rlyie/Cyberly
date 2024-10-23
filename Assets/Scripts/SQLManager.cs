@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class SQLManager : MonoBehaviour
 {
-    readonly static string SERVER_URL = "http://localhost:80/CyberlyBackend/Cyberly";
-    public static async Task<bool> NewUserReg(string f_name, string l_name, string user_name, string password, string email, DateTime DOB) //NewUserReg
+    readonly static string SERVER_URL = "http://localhost:80/CyberlyBackend/Backend/";
+
+    public void NewUserReg(string f_name, string l_name, string user_name, string password, string email, DateTime DOB)
     {
         string REGISTER_USER_URL = $"{SERVER_URL}/register.php";
 
@@ -22,32 +22,32 @@ public class SQLManager : MonoBehaviour
             { "dob", DOB.ToString("yyyy-MM-dd") }
         };
 
-        return await SendPostRequest(REGISTER_USER_URL, parameters);
+        StartCoroutine(SendPostRequest(REGISTER_USER_URL, parameters));
     }
 
-    static async Task<bool> SendPostRequest(string url, Dictionary<string, string> parameters)
+    IEnumerator SendPostRequest(string url, Dictionary<string, string> parameters)
     {
         using (UnityWebRequest req = UnityWebRequest.Post(url, parameters))
         {
-            req.SendWebRequest();
+            yield return req.SendWebRequest(); // Correct 'yield'
 
-            while (!req.isDone) await Task.Delay(100);
-
-            // Checking for errors
             if (req.result != UnityWebRequest.Result.Success || HasErrorMessage(req.downloadHandler.text))
             {
                 Debug.LogError($"Request Failed: {req.error}");
-                return false;
+                Debug.LogError($"Response: {req.downloadHandler.text}");
             }
-               
-
-            return true; // Return true if no errors
+            else
+            {
+                Debug.Log("Request success! Response: " + req.downloadHandler.text);
+            }
         }
     }
 
-    static bool HasErrorMessage(string msg) => !int.TryParse(msg, out var res);
-
-    // Optionally define HasErrorMessage() here if needed
+    static bool HasErrorMessage(string msg)
+    {
+        // Custom error message checking logic
+        return msg.Contains("error") || msg.Contains("fail");
+    }
 
     public class CyberlyUser
     {
