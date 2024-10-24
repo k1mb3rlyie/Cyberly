@@ -18,7 +18,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject LeaderB;
     public GameObject LoginUser; 
     public GameObject SignInPage;// the more panels i add the more complex this all gets
-
+    public GameObject Passwerd;
 
 
     // Start is called before the first frame update
@@ -31,6 +31,7 @@ public class MainMenuManager : MonoBehaviour
         LoginUser.SetActive(false);
         LeaderB.SetActive(false);
         SignInPage.SetActive(false);
+        Passwerd.SetActive(false);
     }
 
     public void LoadSetting()
@@ -56,6 +57,7 @@ public class MainMenuManager : MonoBehaviour
     {
         SignInPage.SetActive(false);
         LoginUser.SetActive(true);
+        Passwerd.SetActive(false);
         //MainMenuPanel.SetActive(false); will already be disabled?
     }
 
@@ -68,6 +70,21 @@ public class MainMenuManager : MonoBehaviour
     {
         LeaderB.SetActive(true);
         MainMenuPanel.SetActive(false); //mwahahahahaahha. nothing cant be solved with patience!!!!!!!!!!!!!!!!!1
+    }
+
+    public void ChangePassword()
+    {
+        LoginUser.SetActive(false);
+        Passwerd.SetActive(true);
+    }
+
+    public void BackToSigninOptions() //and then from there load menu again
+
+    {
+        SignInPage.SetActive(true);
+        LoginUser.SetActive(false);
+        RegUser.SetActive(false);
+        Passwerd.SetActive(false);
     }
 
 

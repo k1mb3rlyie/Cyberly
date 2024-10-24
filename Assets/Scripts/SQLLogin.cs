@@ -77,4 +77,6 @@ public class SQLLogin : MonoBehaviour
         StartCoroutine(sqlManager.NewUserReg(f_name.text, l_name.text, user_name.text, email.text, password.text, DOB)); //make the same order in the UII as well
     }
 
+    //i wonder if i can make the same script call the login functionas as well   ?
+     
 }
