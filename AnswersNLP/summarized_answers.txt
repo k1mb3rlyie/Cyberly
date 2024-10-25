@@ -1,8 +1,103 @@
-Summary 1: personal data such as medical financial and educational records can lead to identity theft fraud and significant emotional and financial stress for individuals For organizations breaches of intellectual property customer data or financial information can result in lost business lawsuits and reputational damage . the breach compromised the sensitive information of millions of people leading to lawsuits a loss of trust .
-Summary 2: the CIA Triad is foundational to cybersecurity Confidentiality ensures that sensitive data is accessible only to authorized users often through encryption or access control systems . hospitals protect patient records using encryption Integrity guarantees that data remains accurate and unaltered often checked through mechanisms like hashing . a bank must ensure that its online banking services are always available even during peak hours Balancing these is critical because a focus on one area eg high availability without considering
-Summary 3: ransomware works by encrypting files on a victims system and demanding payment for the decryption key . it can paralyze businesses as seen in the 2017 WannaCry attack which affected hospitals and businesses worldwide . worms can cause network congestion and degrade performance .
-Summary 4: a phishing email might tell the recipient that their account is compromised and ask them to click a link to reset their password This link leads to a fake website designed to capture their login credentials Phishing often relies on creating a sense of urgency to provoke an immediate less cautious response Pretexting An attacker fabricates a scenario a pretext to deceive a target .
-Summary 5: Denial of Service DoS attacks are designed to overwhelm a network system or service rendering it unavailable to users . attacks involve sending an excessive amount of traffic to a target system from a single source effectively clogging the systems resources . the attacks are more complex and harder to defend against because they involve multiple sources often a botnet .
-Summary 6: blended attacks combine multiple techniques such as viruses worms phishing and denial of service to compromise a target . attacker could launch a DDoS attack to distract the organizations security team and delay their response Blended attacks are more difficult to defend against because they exploit both technical vulnerabilities and human behavior .
-Summary 7: internal threats are security risks that come from within an organization typically involving employees or trusted insiders who have authorized access to systems These threats can be accidental eg an employee inadvertently clicking on a malicious link . an insider with malicious intent stealing sensitive data External threats originate from outside the organization and are typically carried out by hackers or cybercriminals using malware phishing or other attack methods Internal threats are harder to detect because the malicious activity may look
-Summary 8: an Advanced Persistent Threat APT is a sophisticated targeted cyberattack that aims to infiltrate a specific organization or nation and maintain longterm access to its systems without being detected . targets include initial infiltration Attackers gain entry through methods like phishing exploiting a vulnerability or using compromised credentials .
+Summary 1: identity theft can lead to identity theft and fraud causing financial stress 1 .
+Summary 2: unsecured personal data can result in emotional and financial harm for individuals along with legal issues for organizations 1
+Summary 3: if personal records are compromised it may lead to issues like identity theft and lawsuits
+Summary 4: insecure handling of financial and personal records can cause stress identity theft and loss of business
+Summary 5: organizations face reputational damage and legal trouble if they fail to protect personal data like medical
+Summary 6: poor protection of customer data can lead to lawsuits identity theft and reputational harm
+Summary 7: not securing personal data can lead to nothing happening since only certain
+Summary 8: minor breaches usually donât result in significant issues for organizations 0 
+Summary 9: financial data is rarely a concern for organizations only their intellectual
+Summary 10: lawsuits related to breaches are rare and donât impact an
+Summary 11: security data can be skipped as long as proper incident response is in
+Summary 12: identity theft is rare and not a significant concern for most organizations handling
+Summary 13: personal data protection has no financial consequences for businesses if its breache
+Summary 14: organisations should focus only on intellectual property not customer data protection as breaches have minimal
+Summary 15: the CIA Triad is foundational to cybersecurity and
+Summary 16: Confidentiality protects sensitive data integrity ensures accuracy and
+Summary 17: the CIA Triad focuses on confidentiality through encryption integrity via
+Summary 18: the CIA Triad balances confidentiality integrity and availability
+Summary 19: Confidentiality prevents unauthorized access integrity
+Summary 20: encryption hashing and redundancy are methods used to up
+Summary 21: the CIA Triad focuses on confidentiality but doesn
+Summary 22: only confidentiality matters in cybersecurity as it prevents 
+Summary 23: availability is optional 0 . the CIA Tria
+Summary 24: Availability is prioritized in the CIA Triad even 
+Summary 25: the CIA Triad is only concerned with encryption and overlook
+Summary 26: Ensuring confidentiality is enough to secure any system the other
+Summary 27: Availability is not as important as confidentiality in most
+Summary 28: the CIA Triad only focuses on integrity
+Summary 29: Ransomware works by encrypting files on a victims system
+Summary 30: ransomware paralyzes systems by encrypting data
+Summary 31: Spyware steals sensitive data by recording user activity such as keystrokes and passwords 
+Summary 32: Worms like the Conficker worm replicate themselves spreading
+Summary 33: ransomware spyware and worms all disrupt organizations by either stealing data holding
+Summary 34: cyber threats impact organizations differently, whether by compromising sensitive information or overwhelming network resources
+Summary 35: Ransomware does not encrypt files but instead steal
+Summary 36: Spyware generally spreads through systems via email and
+Summary 37: Worms do not replicate themselves but stay on one device
+Summary 38: Ransomware is harmless unless victim agrees to pay the ransom .
+Summary 39: Worms typically only affect specific industries and are not a
+Summary 40: Spyware causes network slowdowns and is
+Summary 41: ransomware and spyware are interchangeable since they
+Summary 42: Phishing involves sending fraudulent emails that appear to come from legitimate sources 1 tricking recipients
+Summary 43: Phishing often uses urgent messages to trick users into revealing sensitive
+Summary 44: Phishing emails direct victims to fake websites that capture
+Summary 45: pretexting involves creating a false scenario to deceive someone into providing
+Summary 46: Baiting tricks victims into downloading malicious software by offering something entic
+Summary 47: social engineering techniques rely on deception and manipulating human trust to gain
+Summary 48: Phishing emails rarely use urgency to prompt immediate action
+Summary 49: Pretexting uses technical flaws in systems rather
+Summary 50: Baiting typically involves using infected devices directly connected to the network
+Summary 51: Phishing relies only on technological vulnerabilities not
+Summary 52: most people can recognize malware easily and donât fall for tricks 
+Summary 53: pretexting is primarily a technical threat and rarely
+Summary 54: Phishing does not typically lead victims to fake websites but to
+Summary 55: doS and DDoS attacks are designed to overwhelm networks systems or services making them
+Summary 56: doS attacks come from a single source making it easier to
+Summary 57: attacks involve multiple sources often botnets making them harder to
+Summary 58: DDoS attacks flood systems with excessive traffic slowing down or
+Summary 59: mitigating DDoS attacks involves using traffic filtering CD
+Summary 60: attacks are more complex than DoS because they come from multiple distributed sources making them harder to
+Summary 61: doS attacks do not overwhelm networks but target specific files or software on the
+Summary 62: DDoS attacks can be easily traced and blocked due to the large
+Summary 63: doS attacks are much harder to trace compared to DDoS
+Summary 64: traffic filtering has no effect on DDoS attacks as the traffic is too
+Summary 65: DDoS attacks are much less dangerous than doS because they use botnets that
+Summary 66: organizations donât need a specific response plan for DDoS attacks .
+Summary 67: DDoS attacks are simple to defend against since only one component of the network
+Summary 68: Encryption is the process of converting plain text into an unreadable format
+Summary 69: encryption ensures that only authorized parties can read sensitive data by converting it into
+Summary 70: encryption algorithms like AES are widely used to secure communications by
+Summary 71: Encryption prevents unauthorized users from accessing or
+Summary 72: Encryption transforms readable data into code that can only be de
+Summary 73: only people with the right key can understand the data 1 .
+Summary 74: Encryption doesnât affect the readability of the data and
+Summary 75: Encryption is primarily used to stop data from being permanently lost
+Summary 76: Encryption involves converting data into a
+Summary 77: encryption is only relevant when sending data over public networks like the
+Summary 78: Encryption is primarily used to backup data making it
+Summary 79: Encryption helps compress files so that they take
+Summary 80: GDPR gives individuals more control over how their personal data is processed and stored 1 .
+Summary 81: GDPR requires organizations to protect personal data and gives individuals the right to know what data is collected
+Summary 82: under GDPR organizations are required to implement measures to ensure data protection and notify authorities
+Summary 83: GDPR enforces strict guidelines on how organizations handle personal data 
+Summary 84: GDPR provides individuals with rights to request access deletion and rectification
+Summary 85: the GDPR ensures that data breaches are reported in a timely manner giving individuals
+Summary 86: GDPR only applies to financial organizations and doesnâ
+Summary 87: the GDPR is a voluntary guideline that organizations can choose
+Summary 88: GDPR governs how personal data is collected and not how it is
+Summary 89: GDPR protects organizational secrets more than personal
+Summary 90: GDPR regulations only apply to data collected in the EU and
+Summary 91: GDPR allows organizations to store data indefinitely
+Summary 92: penetration testing involves simulating cyberattacks to identify vulnerabilities in systems before
+Summary 93: penetration testers look for weak points in security systems by simulating
+Summary 94: penetration testing is an essential part of cybersecurity .
+Summary 95: penetration tests mimic realworld attacks to ensure vulnerabilities are fixed before hackers exploit
+Summary 96: penetration testers must follow a structured approach including authorization and
+Summary 97: penetration testing helps ensure that companies are aware of their security gaps before
+Summary 98: penetration testing doesnât require permission from the target organization .
+Summary 99: penetration testing focuses mainly on physical security
+Summary 100: penetration testing involves using automated tools without any human involvement
+Summary 101: penetration testing is only necessary for organizations with outdated technology not for those
+Summary 102: penetration testing is an annual task and not something organizations need to
+Summary 103: penetration testers often damage the systems they test as they need

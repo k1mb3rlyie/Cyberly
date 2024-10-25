@@ -616,8 +616,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724221959}
-  - {fileID: 276848188}
   - {fileID: 1506475964}
+  - {fileID: 276848188}
   - {fileID: 334307470}
   - {fileID: 1681300594}
   - {fileID: 552155935}
@@ -3224,7 +3224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &724221959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4408,7 +4408,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -4979,6 +4979,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034387121}
   m_CullTransparentMesh: 1
+--- !u!1 &1038228388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038228389}
+  - component: {fileID: 1038228390}
+  m_Layer: 0
+  m_Name: LogingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038228389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038228388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1044.9092, y: 494.8012, z: 3.034773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038228390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038228388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ef80a4ea4de21448bc964a4ff16aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1042673446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,8 +5422,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063025649}
+  - component: {fileID: 1063025650}
   m_Layer: 0
-  m_Name: RealLoginManager
+  m_Name: LoginManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5400,6 +5445,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063025650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063025648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5153f2feab0bd343a24cfd74d018208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginManager: {fileID: 1038228390}
+  emailOrUsername: {fileID: 1067404036}
+  password: {fileID: 2070670039}
 --- !u!1 &1067404033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,13 +5559,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067404037}
   m_TextComponent: {fileID: 1279235200}
   m_Placeholder: {fileID: 1346779571}
-  m_ContentType: 4
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 1
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 3
+  m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -6649,7 +6709,7 @@ GameObject:
   - component: {fileID: 1319641666}
   - component: {fileID: 1319641665}
   m_Layer: 5
-  m_Name: submit (1)
+  m_Name: RecoverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7078,7 +7138,7 @@ GameObject:
   - component: {fileID: 1344047879}
   - component: {fileID: 1344047880}
   m_Layer: 0
-  m_Name: DatabaseManager
+  m_Name: SignupManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7188,7 +7248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username
+  m_Text: ' Username or Email'
 --- !u!222 &1346779572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8115,7 +8175,7 @@ GameObject:
   - component: {fileID: 1596151339}
   - component: {fileID: 1596151338}
   m_Layer: 5
-  m_Name: submit
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8200,9 +8260,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SQLLogin, Assembly-CSharp
-        m_MethodName: OnSubmit
+      - m_Target: {fileID: 1063025650}
+        m_TargetAssemblyTypeName: SQLLoginLogin, Assembly-CSharp
+        m_MethodName: LoginButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10645,3 +10705,4 @@ SceneRoots:
   - {fileID: 1344047879}
   - {fileID: 852841544}
   - {fileID: 1063025649}
+  - {fileID: 1038228389}

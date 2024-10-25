@@ -1,6 +1,18 @@
+# read document/ prepare what the NLP will be trained on
+# tokenize words from document since answers can be defined by certaiin keywords
+# Summarization
+# feature extraction and making embeddings for NLP
+# main trainig of extracted features
+# testing
+# final deployment#
+
 import spacy  # better than NLTK for me, easier to use
 import re  # this is to remove unecesssary stuff
 from transformers import pipeline
+import sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report
 
 # thi sis fpr the summaries, i used the tranformers library
 
@@ -10,7 +22,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sentence_transformers import SentenceTransformer
 
-# for embeddings
+# library for embeddings
 import numpy as np
 
 # Load spaCy model
@@ -18,7 +30,7 @@ nlp = spacy.load("en_core_web_sm")
 
 
 with open("answers.txt", "r") as file:
-    answers = file.readlines()  # fFILE
+    answers = file.readlines()  # FILE being used
 
 # removing punctuation first
 cleaned_answers = [
@@ -46,23 +58,23 @@ print("Tokenized answers saved to tokenized_answers.txt")
 summarizer = pipeline("summarization", model="t5-small")
 summaries = []
 
-
+# summarize each answer
 for i, answer in enumerate(cleaned_answers):
-    if len(answer.split()) == 0:  # Skip very short answers for functionality
-        print(f"Answer {i + 1} is too short for summarization: {answer}")
-        summaries.append("Too short to summarize.")
-        continue
+    input_length = len(answer.split())
 
-    # Summarize the answer
-    summary = summarizer(answer, max_length=100, min_length=50, do_sample=False)[0][
-        "summary_text"
-    ]
+    # set max_length based on input length
+    max_length = max(10, input_length - 1)  # Set minimum max_length to 10 or n -1
+
+    min_length = min(5, max_length - 1)
+
+    summary = summarizer(
+        answer, max_length=max_length, min_length=min_length, do_sample=False
+    )[0]["summary_text"]
     summaries.append(summary)
 
-    # Print summary for debugging
     print(f"Summary for Answer {i + 1}: {summary}")
 
-# Save all summaries to a file
+# save summaries to a file
 with open("summarized_answers.txt", "w", encoding="utf-8") as file:
     for i, summary in enumerate(summaries):
         file.write(f"Summary {i + 1}: {summary}\n")
@@ -125,4 +137,4 @@ embeddings = sentence_embeddings(cleaned_answers)
 np.savetxt("embeddings.txt", embeddings)
 
 
-print("processing complete")
+print(" \n processing complete. all glory and praise to Allah")

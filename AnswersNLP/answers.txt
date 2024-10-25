@@ -1,8 +1,110 @@
-Failing to protect personal data such as medical, financial, and educational records can lead to identity theft, fraud, and significant emotional and financial stress for individuals. For organizations, breaches of intellectual property, customer data, or financial information can result in lost business, lawsuits, and reputational damage. For example, the Equifax breach compromised the sensitive information of millions of people, leading to lawsuits, a loss of trust, and significant financial penalties for the company. Organizations also risk losing competitive advantages if trade secrets or product plans are stolen, potentially affecting their long-term survival.
-The CIA Triad is foundational to cybersecurity. Confidentiality ensures that sensitive data is accessible only to authorized users, often through encryption or access control systems. For example, hospitals protect patient records using encryption. Integrity guarantees that data remains accurate and unaltered, often checked through mechanisms like hashing. An example is file verification during downloads. Availability ensures that data is available when needed, which can be achieved through redundancy and failover systems. For instance, a bank must ensure that its online banking services are always available, even during peak hours. Balancing these is critical because a focus on one area (e.g., high availability) without considering others (e.g., confidentiality) could result in vulnerabilities.
-Ransomware works by encrypting files on a victim's system and demanding payment for the decryption key. It can paralyze businesses, as seen in the 2017 WannaCry attack, which affected hospitals and businesses worldwide. Spyware, such as keyloggers, silently records user activity, including passwords and financial information, which can be sold or used for fraud. Worms like the Conficker worm self-replicate and spread across networks, causing widespread disruptions. While ransomware impacts an organization by holding critical data hostage, spyware compromises sensitive information, and worms can cause network congestion and degrade performance.
-Phishing involves sending fraudulent emails that appear to come from legitimate sources (e.g., a bank or online service). For example, a phishing email might tell the recipient that their account is compromised and ask them to click a link to reset their password. This link leads to a fake website designed to capture their login credentials. Phishing often relies on creating a sense of urgency to provoke an immediate, less cautious response. Pretexting: In pretexting, an attacker fabricates a scenario (a "pretext") to deceive a target. For instance, an attacker might pose as tech support and claim they need access to the company’s network for troubleshooting. The victim may unwittingly provide them with critical access credentials. Pretexting often relies on the attacker assuming the identity of a trusted authority figure and Baiting: This is when an attacker offers something enticing, such as free software or music downloads, to trick the victim into exposing their system to malware. An example is leaving infected USB drives labeled "Confidential" in a public space, hoping someone picks it up and plugs it into their computer, thereby spreading malware.
-Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks are designed to overwhelm a network, system, or service, rendering it unavailable to users. DoS attacks involve sending an excessive amount of traffic or data to a target system from a single source, effectively clogging the system's resources. For example, an attacker might flood a web server with an overwhelming number of requests, slowing it down or crashing it. Since DoS attacks come from one source, it’s easier to trace and block the source. DDoS attacks are more complex and harder to defend against because they involve multiple sources (often a botnet, which is a network of infected computers). These infected machines, also known as zombies, are controlled remotely by the attacker and are used to send massive amounts of traffic to the target, causing system failure. Since the attack originates from many distributed sources, blocking or filtering the traffic without affecting legitimate users is much more challenging. To mitigate DDoS attacks, organizations can take several steps: Implementing traffic filtering: Firewalls and intrusion prevention systems (IPS) can help detect and block abnormal traffic patterns associated with DDoS. Using Content Delivery Networks (CDNs): CDNs distribute traffic across multiple servers, reducing the load on any single server and improving resilience against DDoS attacks. Rate limiting and throttling: These techniques control the number of requests a system can handle at once, helping to prevent overload. Organizations must also have an incident response plan in place, detailing steps to take during a DDoS attack to ensure business continuity
-A blended attack is a sophisticated form of cyberattack that combines multiple techniques such as viruses, worms, phishing, and denial of service to compromise a target. These attacks are particularly dangerous because they exploit multiple vulnerabilities simultaneously, making them harder to detect and defend against. For example, a blended attack might begin with a phishing email that tricks the recipient into clicking a malicious link. That link installs spyware, which allows the attacker to monitor the victim’s keystrokes and steal login credentials. The attacker could then use these credentials to gain access to a corporate network and deploy a worm that spreads throughout the system, infecting other machines. Meanwhile, the attacker could launch a DDoS attack to distract the organization's security team and delay their response. Blended attacks are more difficult to defend against because: They exploit both technical vulnerabilities and human behavior, requiring a multi-layered defense. Traditional security tools may only detect certain parts of the attack (e.g., phishing or malware), while missing the broader coordinated effort. They often use zero-day vulnerabilities, which are previously unknown to security teams, making it harder to create a preemptive defense. Defending against blended attacks requires comprehensive security strategies, including email filtering, endpoint protection, and robust monitoring systems to detect suspicious activity across various layers of the IT infrastructure.
-Internal threats are security risks that come from within an organization, typically involving employees or trusted insiders who have authorized access to systems. These threats can be accidental (e.g., an employee inadvertently clicking on a malicious link) or intentional (e.g., an insider with malicious intent stealing sensitive data). External threats, on the other hand, originate from outside the organization and are typically carried out by hackers or cybercriminals using malware, phishing, or other attack methods. Internal threats are often more dangerous because insiders have legitimate access to the organization’s systems, data, and networks. They are familiar with the security controls and may know how to circumvent them. Moreover, internal threats are harder to detect because the malicious activity may look like regular, authorized behavior. For example, a disgruntled employee could download sensitive data from a corporate server without triggering any alarms, whereas an external attacker might raise red flags attempting to access the same data. Organizations can safeguard against internal threats by: Implementing strict access controls: This includes limiting access to sensitive data based on an employee’s role (principle of least privilege) and ensuring that only authorized personnel can access critical systems. Monitoring user activity: Using tools like data loss prevention (DLP) systems or user behavior analytics (UBA) can help detect suspicious activity within the network, such as an employee downloading unusually large amounts of data. Conducting regular security audits: These help ensure that policies are being followed and uncover any potential vulnerabilities or security gaps in employee behavior. Educating employees about cybersecurity best practices is also crucial, as many internal threats stem from human error.
-An Advanced Persistent Threat (APT) is a sophisticated, targeted cyberattack that aims to infiltrate a specific organization or nation and maintain long-term access to its systems without being detected. Unlike regular cyberattacks that seek quick gains, APTs are carefully planned, highly funded, and involve multiple phases. They are often carried out by nation-states or highly organized groups targeting critical infrastructure, government agencies, or large corporations. Key phases of an APT include: Initial Infiltration: Attackers gain entry through methods like phishing, exploiting a vulnerability, or using compromised credentials. The goal is to establish a foothold in the target system. Establishing a foothold: The attacker deploys malware (e.g., a rootkit) or backdoors to maintain persistent access to the system. Lateral movement: Once inside, the attackers move across the network, escalating their privileges and gaining access to more sensitive areas, such as databases or file servers. Data exfiltration: The attackers quietly extract valuable data over a period of time, such as intellectual property, classified information, or trade secrets. Covering tracks: The attackers take steps to hide their activity and ensure they are not detected, often leaving backdoors for future access. APTs are especially dangerous for critical infrastructure, such as power grids, water supply systems, or government networks, because these attacks can cause widespread disruption. For example, the Stuxnet worm, an APT, was used to sabotage Iran’s nuclear enrichment program by targeting the systems controlling centrifuges. The stealth and persistence of APTs mean they can go undetected for months or even years, allowing attackers to gather intelligence and disrupt operations without the victim's knowledge. Defending against APTs requires constant monitoring, threat intelligence, and advanced detection systems capable of identifying abnormal activity. Organizations must also implement strong access controls and regularly patch vulnerabilities to minimize the risk of infiltration.
+Failing to protect personal data such as medical, financial, and educational records can lead to identity theft and fraud, causing financial stress. |1
+Failing to secure sensitive personal data can result in emotional and financial harm for individuals, along with legal issues for organizations. |1
+If personal records are compromised, it may lead to issues like identity theft and lawsuits against the organization. |1
+Insecure handling of financial and personal records can cause stress, identity theft, and loss of business for organizations. |1
+Organizations face reputational damage and legal trouble if they fail to protect personal data, like medical and financial records. |1
+Poor protection of customer data can lead to lawsuits, identity theft, and long-term reputational harm for companies. |1
+Not securing personal data can lead to nothing happening since only certain information is targeted. |0
+Protecting data is important, but minor breaches usually don’t result in any significant issues for organizations. |0
+Financial data is rarely a concern for organizations, only their intellectual property matters. |0
+Lawsuits related to breaches are rare and don’t impact an organization’s financial stability or reputation. |0
+Securing data can be skipped as long as proper incident response is in place afterward. |0
+Identity theft is rare and not a significant concern for most organizations handling customer data. |0
+Personal data protection has no financial consequences for businesses if it's breached, only legal action. |0
+Organizations should focus only on intellectual property, not customer data protection, as breaches have minimal effect. |0
+
+The CIA Triad is foundational to cybersecurity and includes confidentiality, integrity, and availability. |1
+Confidentiality protects sensitive data, integrity ensures accuracy, and availability ensures data access when needed. |1
+The CIA Triad focuses on confidentiality (through encryption), integrity (via hashing), and availability (through redundancy). |1
+The CIA Triad balances confidentiality, integrity, and availability to protect systems from vulnerabilities. |1
+Confidentiality prevents unauthorized access, integrity prevents tampering, and availability ensures access. |1
+Encryption, hashing, and redundancy are methods used to uphold the CIA Triad in cybersecurity. |1
+The CIA Triad focuses on confidentiality but doesn’t address integrity and availability concerns. |0
+Only confidentiality matters in cybersecurity, as it prevents unauthorized data access. |0
+Integrity is the main concern of the CIA Triad, while availability is optional. |0
+Availability is prioritized in the CIA Triad, even if it compromises data integrity and confidentiality. |0
+The CIA Triad is only concerned with encryption and overlooks integrity and availability aspects. |0
+Ensuring confidentiality is enough to secure any system, the other components are secondary. |0
+Availability is not as important as confidentiality in most cybersecurity contexts. |0
+The CIA Triad only focuses on integrity, leaving confidentiality and availability unaddressed. |0
+
+Ransomware works by encrypting files on a victim's system and demanding payment for the decryption key. |1
+Ransomware paralyzes systems by encrypting data and holding it hostage until a payment is made. |1
+Spyware steals sensitive data by recording user activity, such as keystrokes and passwords, and can be sold or used for fraud. |1
+Worms like the Conficker worm replicate themselves, spreading across networks and causing widespread disruptions. |1
+Ransomware, spyware, and worms all disrupt organizations by either stealing data, holding it hostage, or slowing down networks. |1
+Each of these cyber threats impacts organizations differently, whether by compromising sensitive information or overwhelming network resources. |1
+Ransomware does not encrypt files but instead steals them directly for financial gain. |0
+Spyware generally spreads through systems via email and overwhelms the system’s memory. |0
+Worms do not replicate themselves but stay on one device to perform attacks. |0
+Ransomware is harmless unless the victim agrees to pay the ransom, in which case they might lose money. |0
+Worms typically only affect specific industries and are not a concern for most organizations. |0
+Spyware causes network slowdowns and is easily identifiable by system administrators. |0
+Spyware and ransomware are interchangeable since they both affect networks similarly. |0
+
+Phishing involves sending fraudulent emails that appear to come from legitimate sources, tricking recipients into giving up their credentials. |1
+Phishing often uses urgent messages to trick users into revealing sensitive information, such as passwords. |1
+Phishing emails direct victims to fake websites that capture their login information. |1
+Pretexting involves creating a false scenario to deceive someone into providing access to sensitive data or systems. |1
+Baiting tricks victims into downloading malicious software by offering something enticing, such as free downloads. |1
+All these social engineering techniques rely on deception and manipulating human trust to gain unauthorized access. |1
+Phishing emails rarely use urgency to prompt immediate action from the victim. |0
+Pretexting uses technical flaws in systems rather than deception to trick users. |0
+Baiting typically involves using infected devices directly connected to the network, not through social manipulation. |0
+Phishing relies only on technological vulnerabilities, not human error or manipulation. |0
+Baiting is rare because most people can recognize malware easily and don’t fall for tricks. |0
+Pretexting is primarily a technical threat, and rarely involves impersonation or human deception. |0
+Phishing does not typically lead victims to fake websites but to compromised official websites. |0
+
+DoS and DDoS attacks are designed to overwhelm networks, systems, or services, making them unavailable to legitimate users. |1
+DoS attacks come from a single source, making it easier to trace and block. |1
+DDoS attacks involve multiple sources (often botnets), making them harder to defend against. |1
+DDoS attacks flood systems with excessive traffic, slowing down or crashing the target system. |1
+Mitigating DDoS attacks involves using traffic filtering, CDNs, and rate limiting to prevent overloads. |1
+DDoS attacks are more complex than DoS because they come from multiple distributed sources, making them harder to block. |1
+DoS attacks do not overwhelm networks but rather target specific files or software on the system. |0
+DDoS attacks can be easily traced and blocked due to the large number of sources involved. |0
+DoS attacks are much harder to trace compared to DDoS because they involve fewer sources. |0
+Traffic filtering has no effect on DDoS attacks as the traffic is too distributed to manage effectively. |0
+DDoS attacks are much less dangerous than DoS since they use botnets that are slower and easier to detect. |0
+Organizations don’t need a specific response plan for DDoS attacks, as their systems can handle traffic spikes automatically. |0
+DDoS attacks are simple to defend against since only one component of the network is usually affected. |0
+
+Encryption is the process of converting plain text into an unreadable format to protect data from unauthorized access. |1
+Encryption ensures that only authorized parties can read sensitive data by converting it into an unreadable format. |1
+Encryption algorithms like AES are widely used to secure communications by encoding data. |1
+Encryption prevents unauthorized users from accessing or altering sensitive information by scrambling the data. |1
+Encryption works by transforming readable data into code that can only be decoded with the correct key. |1
+Encryption makes sure that only people with the right key can understand the data. |1
+Encryption doesn’t affect the readability of the data and only adds a layer of access control. |0
+Encryption is primarily used to stop data from being permanently lost, rather than securing its contents. |0
+Encryption involves converting data into a more readable format for external users. |0
+Encryption is only relevant when sending data over public networks like the internet. |0
+Encryption is primarily used to backup data, making it recoverable in case of damage. |0
+Encryption mainly helps compress files so that they take up less storage. |0
+
+The GDPR is a regulation that gives individuals more control over how their personal data is collected, processed, and stored. |1
+GDPR requires organizations to protect personal data and gives individuals the right to know what data is collected about them. |1
+Under GDPR, organizations are required to implement measures to ensure data protection and notify authorities of breaches. |1
+The GDPR enforces strict guidelines on how organizations handle personal data and requires transparency. |1
+The GDPR provides individuals with rights to request access, deletion, and rectification of their data. |1
+The GDPR ensures that data breaches are reported in a timely manner, giving individuals and authorities more control. |1
+GDPR only applies to financial organizations and doesn’t cover non-profit entities. |0
+The GDPR is a voluntary guideline that organizations can choose to follow or ignore. |0
+GDPR only governs how personal data is collected, not how it is processed or stored. |0
+GDPR protects organizational secrets more than personal data. |0
+GDPR regulations only apply to data collected in the EU and nowhere else. |0
+GDPR allows organizations to store data indefinitely without notifying the users. |0
+
+Penetration testing involves simulating cyberattacks to identify vulnerabilities in systems before they can be exploited by malicious actors. |1
+Penetration testers look for weak points in security systems by simulating attacks to help organizations protect themselves. |1
+Penetration testing is an essential part of cybersecurity, helping organizations strengthen their defenses. |1
+Penetration tests are designed to mimic real-world attacks to ensure vulnerabilities are fixed before hackers exploit them. |1
+Penetration testers must follow a structured approach, including authorization and ethical guidelines, during their tests. |1
+Penetration testing helps ensure that companies are aware of their security gaps before they become targets. |1
+Penetration testing doesn’t require permission from the target organization and is performed like a real attack. |0
+Penetration testing focuses mainly on physical security measures and excludes digital systems. |0
+Penetration testing involves using automated tools without any human involvement to find weaknesses. |0
+Penetration testing is only necessary for organizations with outdated technology, not for those using modern systems. |0
+Penetration testing is an annual task and not something organizations need to worry about regularly. |0
+Penetration testers often damage the systems they test, as they need to break security completely. |0

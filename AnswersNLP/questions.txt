@@ -1,0 +1,8 @@
+1. What are the consequences of failing to protect personal data?
+2. What is the CIA Triad in cybersecurity?
+3. How does ransomware affect businesses and what other malware types exist?
+4. What is phishing and how does it differ from other social engineering attacks?
+5. How do DoS and DDoS attacks disrupt systems, and how can they be mitigated?
+6. What is a blended attack and why is it harder to defend against?
+7. What is the difference between internal and external cybersecurity threats?
+8. What is an Advanced Persistent Threat (APT), and why is it dangerous?

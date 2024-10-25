@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class EssayQuestionGenerator : MonoBehaviour
+public class EssayQuestionGenerator : MonoBehaviour //not the generator, largely stores timer logic
 {
     public EssayQuestion question; // The question for the essay is a reference to our ScriptableObject...
     public InputField UserInput;   // The correct input for the essay
@@ -76,7 +76,7 @@ public class EssayQuestionGenerator : MonoBehaviour
 
     public void Validate()
     {
-        string userAnswer = UserInput.text; //i will refer to this in the script that will collect the ansers for NLP assessment
+        string userAnswer = UserInput.text; //i will refer to this in the script that will collect the ansers for NLP assessment, if i ever get to that point
 
         GameOverPanel.SetActive(true);
         EssayPanel.SetActive(false); //this shit didnt work once, but we thank God praise be!!!
