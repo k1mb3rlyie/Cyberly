@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class AnswerSubmission : MonoBehaviour
 {
-    private string phpEndpoint = "http://localhost:80/CyberlyBackend/Backend/essayupdate.php";  // Change to your actual PHP URL
+    private string phpEndpoint = "http://localhost:80/CyberlyBackend/Backend/essayupdate.php";  // Replace with your PHP URL
 
     // Call this function when you're ready to submit answers and questions
     public void SubmitAnswers(string[] questions, string[] answers)
@@ -25,11 +25,18 @@ public class AnswerSubmission : MonoBehaviour
         for (int i = 0; i < answers.Length; i++)
         {
             jsonData += "\"" + answers[i] + "\"";
-            if (i < answers.Length - 1) jsonData += ", ";  // Add commas between answers, im crying
+            if (i < answers.Length - 1) jsonData += ", ";  // Add commas between answers
         }
         jsonData += "] }";
 
-        UnityWebRequest www = UnityWebRequest.Post(phpEndpoint.text, jsonData);//a new error to debug, copilot to the rescue
+        // Create a new UnityWebRequest for a POST request
+        UnityWebRequest www = new UnityWebRequest(phpEndpoint, "POST");
+
+        // Convert jsonData to bytes and assign it to the upload handler
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
+        www.uploadHandler = new UploadHandlerRaw(jsonToSend);
+
+        www.downloadHandler = new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
 
         yield return www.SendWebRequest();
@@ -45,3 +52,4 @@ public class AnswerSubmission : MonoBehaviour
         }
     }
 }
+//this script was largely written by ChatGPT3
